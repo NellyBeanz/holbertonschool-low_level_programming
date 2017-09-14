@@ -3,31 +3,29 @@
 /**
  * main - Entry point
  *
+ * Description: prints numbers 00-99 separated by a comma
+ *
  * Return: Always 0 (Success)
  */
 int main(void)
 {
 
-	int c = '0';
-	int k = '0';
+	int c;
+	int k;
 
-	while (c <= '9')
+	for (c = '0'; c <= '9'; c++)
 	{
-		while (k <= '9')
+		for (k = '0'; k <= '9'; k++)
 		{
 			putchar (c);
 			putchar (k);
-
-			if (c != '9' || k != '9')
+			if (!(c == '9' && k == '9'))
 			{
 				putchar(',');
 				putchar(' ');
 			}
-			k++;
 		}
-		c++;
-		k = '0';
-
+	}
 	putchar ('\n');
 	return (0);
 }
