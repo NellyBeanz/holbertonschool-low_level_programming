@@ -1,6 +1,9 @@
 #include "holberton.h"
+
 /**
- * Main - prints Holberton followed by a new line
+ * main - Entry point
+ *
+ * Description: prints Holberton followed by a new line
  *
  * Return: 0
  */
