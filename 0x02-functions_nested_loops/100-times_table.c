@@ -22,17 +22,17 @@ void print_times_table(int n)
 			{
 				_putchar ('0');
 			}
-			else 
+			else
 			{
 				_putchar(' ');
-				
+
 				b = a * c;
 				d = b / 100;
 				if (d == 0)
 					_putchar(' ');
 				else
 					_putchar(d + 48);
-						 
+
 				d = b / 10;
 				if (d == 0)
 					_putchar(' ');
@@ -45,5 +45,4 @@ void print_times_table(int n)
 		}
 		_putchar('\n');
 	}
-}	
-				
+}
