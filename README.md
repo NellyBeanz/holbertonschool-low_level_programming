@@ -1,1 +1,4 @@
-First project on C
+First project on C:
+- pointers
+- arrays
+- recursions
