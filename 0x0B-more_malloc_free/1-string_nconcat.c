@@ -10,9 +10,8 @@
  */
 unsigned int _strlen(char *s)
 {
-	unsigned int len;
+	unsigned int len = 0;
 
-	len = 0;
 	while (*s)
 	{
 		len++;
@@ -28,7 +27,7 @@ unsigned int _strlen(char *s)
  * @n: characters to concatenate in s2
  *
  * Return: concatenated string
- */ 
+ */
 char *string_nconcat(char *s1, char *s2, unsigned int n)
 {
 	char *ptr;
@@ -38,7 +37,7 @@ char *string_nconcat(char *s1, char *s2, unsigned int n)
 		n = _strlen(s2);
 
 	count = _strlen(s1) + n;
-	ptr = malloc(sizeof *ptr * count + 1);
+	ptr = malloc(sizeof(*ptr) * count + 1);
 	if (ptr == NULL)
 		return (NULL);
 
@@ -48,7 +47,7 @@ char *string_nconcat(char *s1, char *s2, unsigned int n)
 		ptr[i] = s1[i];
 		i++;
 	}
-	
+
 	j = 0l;
 	while (n > 0)
 	{
