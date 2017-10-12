@@ -1,6 +1,4 @@
-#include <stdio.h>
 #include <stdlib.h>
-#include "holberton.h"
 
 /**
  * _strlen - count the length of a string
