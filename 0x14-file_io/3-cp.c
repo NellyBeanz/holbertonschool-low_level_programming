@@ -26,7 +26,7 @@ int main(int argc, char *argv[])
 		dprintf(STDERR_FILENO, "Error: Can't write to %s\n", argv[2]), exit(99);
 	buf = malloc(sizeof(char) * BUFFSIZE);
 	do {
-		r_file =  read(from, buf, BUFFSIZE);
+		r_file = read(from, buf, BUFFSIZE);
 		if (r_file == -1)
 		{
 			dprintf(STDERR_FILENO, "Error: Can't read file from %s\n", argv[1]),
