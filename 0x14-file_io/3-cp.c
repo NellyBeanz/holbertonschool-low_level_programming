@@ -31,12 +31,10 @@ int main(int argc, char *argv[])
 		r_file =  read(from, buf, BUFFSIZE);
 		if (r_file == -1)
 		{
-			close(from), close(to);
 			dprintf(STDERR_FILENO, "Error: Can't read file from %s\n", argv[1]),
 			exit(98); }
-		if ((write(to, buf, BUFFSIZE)) == -1)
+		if ((write(to, buf, r_file)) == -1)
 		{
-			close(from), close(to);
 			dprintf(STDERR_FILENO, "Error: Can't write to %s\n", argv[2]),
 				exit(99); }
 	} while (r_file == BUFFSIZE);
