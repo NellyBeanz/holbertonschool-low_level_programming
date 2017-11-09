@@ -35,7 +35,7 @@ int main(int argc, char *argv[])
 		{
 			dprintf(STDERR_FILENO, "Error: Can't write to %s\n", argv[2]),
 				exit(99); }
-	} while (r_file == BUFFSIZE);
+	} while (r_file != 0);
 	writ = close(from);
 	if (writ == -1)
 	{ dprintf(STDERR_FILENO, "Error: Can't close fd %d\n", from),
