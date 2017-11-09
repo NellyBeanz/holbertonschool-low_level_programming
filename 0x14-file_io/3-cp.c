@@ -13,7 +13,7 @@ int main(int argc, char *argv[])
 	char buf[BUFFSIZE];
 
 	if (argc != 3)
-		dprintf(STDERR_FILENO, "Usage: cp file_from from_to\n"), exit(97);
+		dprintf(STDERR_FILENO, "Usage: cp file_from file_to\n"), exit(97);
 	from = open(argv[1], O_RDONLY);
 	if (from == -1)
 		dprintf(STDERR_FILENO, "Error: Can't read from file %s\n", argv[1]),
