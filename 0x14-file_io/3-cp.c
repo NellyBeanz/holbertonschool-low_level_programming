@@ -9,8 +9,8 @@
  */
 int main(int argc, char *argv[])
 {
-	int from, to, r_file, w_file, writ;
-	char *buf[BUFFSIZE];
+	int from, to, r_file, w_file;
+	char buf[BUFFSIZE];
 
 	if (argc != 3)
 		dprintf(STDERR_FILENO, "Usage: cp file_from from_to\n"), exit(97);
@@ -36,12 +36,12 @@ int main(int argc, char *argv[])
 			dprintf(STDERR_FILENO, "Error: Can't write to %s\n", argv[2]),
 				exit(99); }
 	} while (r_file != 0);
-	writ = close(from);
-	if (writ == -1)
+	w_file = close(from);
+	if (w_file == -1)
 	{ dprintf(STDERR_FILENO, "Error: Can't close fd %d\n", from),
 			exit(100); }
-	writ = close(to);
-	if (writ == -1)
+	w_file = close(to);
+	if (w_file == -1)
 	{
 		dprintf(STDERR_FILENO, "Error: Can't close fd %d\n", to), exit(100); }
 	return (0);
