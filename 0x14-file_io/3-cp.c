@@ -28,7 +28,7 @@ int main(int argc, char *argv[])
 		r_file = read(from, buf, BUFFSIZE);
 		if (r_file == -1)
 		{
-			dprintf(STDERR_FILENO, "Error: Can't read file from %s\n", argv[1]),
+			dprintf(STDERR_FILENO, "Error: Can't read from file %s\n", argv[1]),
 			exit(98); }
 		w_file = write(to, buf, r_file);
 		if (w_file == -1)
