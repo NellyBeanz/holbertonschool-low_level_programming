@@ -9,7 +9,7 @@
  */
 int main(int argc, char *argv[])
 {
-	int from, to, r_file;
+	int from, to, r_file, writ;
 	char *buf;
 
 	if (argc != 3)
@@ -38,12 +38,13 @@ int main(int argc, char *argv[])
 			dprintf(STDERR_FILENO, "Error: Can't write to %s\n", argv[2]),
 				exit(99); }
 	} while (r_file == BUFFSIZE);
-	if (close(from) == -1)
-	{ close(to);
-		dprintf(STDERR_FILENO, "Error: Can't close fd %d\n", from),
+	writ = close(from);
+	if (writ == -1)
+	{ dprintf(STDERR_FILENO, "Error: Can't close fd %d\n", from),
 			exit(100); }
-	if (close(to) == -1)
-	{ free(buf);
+	writ = close(to);
+	if (writ == -1)
+	{
 		dprintf(STDERR_FILENO, "Error: Can't close fd %d\n", to), exit(100); }
 	free(buf);
 	return (0);
